@@ -1,0 +1,14 @@
+<h1>Thank You for Registering</h1>
+
+<div *ngIf="auth.user as user">
+	<p>We have sent a confirmation email to <strong>{{ user.email }}</strong>.</p>
+	<p>Please check your email and click on the link to verfiy your email address.</p>
+</div>
+
+<div>
+	<button type="button" (click)="auth.SendVerificationMail()">Resend Verification Email</button>
+</div>
+
+<div>
+	Go back to <a routerLink="/sign-in">sign in</a>?
+</div>

@@ -1,0 +1,14 @@
+<!-- Top navigation -->
+<h1>Dashboard</h1>
+
+<a (click)="auth.SignOut()" href="/sign-in">Log out</a>
+
+<h3>User Profile</h3>
+
+<div *ngIf="auth.user as user">
+	<img [src]="( user.photoURL ) ? user.photoURL : '/assets/dummy-user.png'" alt="{{ user.displayName }}">
+	<p>Hello: <strong>{{ ( user.displayName ) ? user.displayName : 'User' }}</strong></p>
+	<p>User ID: <strong>{{ user.uid }}</strong></p>
+	<p>Email: <strong>{{ user.email }}</strong></p>
+	<p>Email Verified: <strong>{{ user.emailVerified }}</strong></p>
+</div>

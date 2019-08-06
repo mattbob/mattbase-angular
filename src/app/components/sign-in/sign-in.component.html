@@ -1,0 +1,27 @@
+<h1>Sign In</h1>
+
+<form [formGroup]="SignInForm" (ngSubmit)="auth.SignIn( SignInForm.value.email, SignInForm.value.password )">
+	<div>
+		<input type="email" placeholder="Email Address" formControlName="email" required>
+	</div>
+
+	<div>
+		<input type="password" placeholder="Password" formControlName="password" required>
+	</div>
+
+	<div>
+		<input type="submit" value="Log In" [disabled]="!SignInForm.valid">
+	</div>
+</form>
+
+<div>
+	<button type="button" (click)="auth.GoogleAuth()">Log in with Google</button>
+</div>
+
+<div>
+	<a routerLink="/forgot-password">Forgot Password?</a>
+</div>
+
+<div>
+	Don't have an account? <a routerLink="/register">Sign Up</a>
+</div>
